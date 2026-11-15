@@ -1,0 +1,447 @@
+/* ===========================
+   CONFIGURAÇÕES GERAIS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+}
+
+:root{
+
+    --cor-fundo:#edf2f7;
+    --cor-card:#ffffff;
+    --cor-texto:#2d3748;
+
+    --azul:#2563eb;
+    --azul-hover:#1d4ed8;
+
+    --cinza:#e5e7eb;
+
+    --verde:#22c55e;
+    --amarelo:#f59e0b;
+    --vermelho:#ef4444;
+
+}
+
+body.dark{
+
+    --cor-fundo:#0f172a;
+    --cor-card:#1e293b;
+    --cor-texto:#f8fafc;
+
+}
+
+body{
+
+    background:var(--cor-fundo);
+
+    color:var(--cor-texto);
+
+    transition:.4s;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+}
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+.container{
+
+    width:100%;
+    max-width:700px;
+
+    background:var(--cor-card);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    transition:.4s;
+
+}
+
+/* ===========================
+   CABEÇALHO
+=========================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+
+}
+
+h1{
+
+    color:var(--azul);
+
+    font-size:30px;
+
+}
+
+.descricao{
+
+    margin-bottom:25px;
+
+    color:gray;
+
+}
+
+/* ===========================
+   INPUT
+=========================== */
+
+.input-group{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+    flex-wrap:wrap;
+
+}
+
+input{
+
+    flex:1;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+select{
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+    cursor:pointer;
+
+}
+
+button{
+
+    border:none;
+
+    background:var(--azul);
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:var(--azul-hover);
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   LISTA
+=========================== */
+
+ul{
+
+    list-style:none;
+
+}
+
+li{
+
+    background:#f8fafc;
+
+    margin-bottom:12px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    animation:aparecer .4s;
+
+    transition:.3s;
+
+}
+
+body.dark li{
+
+    background:#334155;
+
+}
+
+/* ===========================
+   PRIORIDADES
+=========================== */
+
+.alta{
+
+    border-left:8px solid var(--vermelho);
+
+}
+
+.media{
+
+    border-left:8px solid var(--amarelo);
+
+}
+
+.baixa{
+
+    border-left:8px solid var(--verde);
+
+}
+/* Badge da prioridade */
+
+.badge{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:90px;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+
+}
+
+.badge.alta{
+
+    background:#ef4444;
+
+}
+
+.badge.media{
+
+    background:#f59e0b;
+
+}
+
+.badge.baixa{
+
+    background:#22c55e;
+
+}
+
+/* ===========================
+   TAREFA CONCLUÍDA
+=========================== */
+
+.concluida{
+
+    text-decoration:line-through;
+
+    opacity:.6;
+
+}
+
+/* ===========================
+   FILTROS
+=========================== */
+
+footer{
+
+    margin-top:25px;
+
+}
+
+.filtros{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+}
+
+/* ===========================
+   TOGGLE MODO ESCURO
+=========================== */
+
+.tema{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.tema span{
+    font-size:20px;
+}
+
+.switch{
+    position:relative;
+    display:inline-block;
+    width:56px;   /* antes 65px */
+    height:28px;  /* antes 34px */
+}
+
+.switch input{
+    opacity:0;
+    width:0;
+    height:0;
+}
+
+.slider{
+    position:absolute;
+    cursor:pointer;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:#bfc5cf;
+    border-radius:28px;
+    transition:.4s;
+}
+
+.slider:before{
+    content:"";
+    position:absolute;
+    width:22px;   /* antes 28px */
+    height:22px;  /* antes 28px */
+    left:3px;
+    top:3px;
+    background:white;
+    border-radius:50%;
+    box-shadow:0 2px 5px rgba(0,0,0,.25);
+    transition:.4s;
+}
+
+.switch input:checked + .slider{
+    background:#2563eb;
+}
+
+.switch input:checked + .slider:before{
+    transform:translateX(28px);
+}
+
+.fa-sun{
+    color:#facc15;
+}
+
+.fa-moon{
+    color:#60a5fa;
+}
+
+/* ===========================
+   ANIMAÇÃO
+=========================== */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+
+@media(max-width:700px){
+
+    .container{
+
+        padding:20px;
+
+    }
+
+    header{
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .input-group{
+
+        flex-direction:column;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    select{
+
+        width:100%;
+
+    }
+
+}

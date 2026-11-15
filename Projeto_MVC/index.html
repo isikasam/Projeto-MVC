@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gerenciador de Tarefas MVC</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Cabeçalho -->
+        <header>
+
+            <h1>
+                <i class="fa-solid fa-list-check"></i>
+                Gerenciador de Tarefas
+            </h1>
+
+            <!-- Botão modo escuro -->
+            <div class="tema">
+
+                <span>
+                    <i class="fa-solid fa-sun"></i>
+                </span>
+
+                <label class="switch">
+
+                    <input type="checkbox" id="toggle-tema">
+
+                    <span class="slider"></span>
+
+                </label>
+
+                <span>
+                    <i class="fa-solid fa-moon"></i>
+                </span>
+
+            </div>
+
+        </header>
+
+        <p class="descricao">
+            Organize suas tarefas utilizando o padrão MVC.
+        </p>
+
+        <!-- Campo para adicionar -->
+        <div class="input-group">
+
+            <input
+                type="text"
+                id="tarefa-input"
+                placeholder="Digite uma tarefa...">
+
+            <!-- Prioridade -->
+            <select id="prioridade">
+
+                <option value="baixa">
+                    🟢 Baixa
+                </option>
+
+                <option value="media">
+                    🟡 Média
+                </option>
+
+                <option value="alta">
+                    🔴 Alta
+                </option>
+
+            </select>
+
+            <button id="btn-adicionar">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Adicionar
+
+            </button>
+
+        </div>
+
+        <!-- Lista -->
+        <ul id="lista-container">
+
+        </ul>
+
+        <!-- Rodapé -->
+        <footer>
+
+            <div class="filtros">
+
+                <button id="btn-todas">
+
+                    Todas
+
+                </button>
+
+                <button id="btn-pendentes">
+
+                    Pendentes
+
+                </button>
+
+                <button id="btn-concluidas">
+
+                    Concluídas
+
+                </button>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script type="module" src="./js/app.js"></script>
+
+</body>
+
+</html>
